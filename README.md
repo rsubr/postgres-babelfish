@@ -15,16 +15,19 @@ Primary difference between official Posgresql docker image and this version is t
 ```bash
 docker pull rsubr/postgres-babelfish
 
-# By defaut Postgres listens only on localhost and inaccessible to external hosts
+# Location to store PGDATA, run once for initdb to succeed, after PG start up press Ctrl+C and exit
+mkdir data
+docker run --rm -e POSTGRES_PASSWORD=password -v ${PWD}/data:/var/lib/postgresql/data rsubr/postgres-babelfish
 
-# Extract the 
+# By defaut Postgres listens only on localhost and inaccessible to external hosts
+# Extract postgres.conf so it can be customized
 docker run -i --rm rsubr/postgres-babelfish cat /usr/share/postgresql/postgresql.conf.sample > my-postgres.conf
 
 # Customize my-postgres.conf
-# listen_addresses = '*' # Liste on all interfaces
+# listen_addresses = '*' # Listen on all interfaces
 
 # Run PG with customized postgres.conf
-docker run -v ${PWD}/my-postgres.conf:/var/lib/postgresql/data/postgresql.conf rsubr/postgres-babelfish 
+docker run -v ${PWD}/data:/var/lib/postgresql/data -v ${PWD}/my-postgres.conf:/var/lib/postgresql/data/postgresql.conf rsubr/postgres-babelfish
 ```
 
 ## Building
