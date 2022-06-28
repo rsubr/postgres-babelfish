@@ -21,7 +21,7 @@ docker run --rm -e POSTGRES_PASSWORD=password -v ${PWD}/data:/var/lib/postgresql
 
 # By defaut Postgres listens only on localhost and inaccessible to external hosts
 # Extract postgres.conf so it can be customized
-docker run -i --rm rsubr/postgres-babelfish cat /usr/share/postgresql/postgresql.conf.sample > my-postgres.conf
+docker run -i --rm rsubr/postgres-babelfish cat /usr/local/share/postgresql.conf.sample > my-postgres.conf
 
 # Customize my-postgres.conf
 # listen_addresses = '*' # Listen on all interfaces
