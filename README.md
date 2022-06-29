@@ -1,4 +1,4 @@
-# Postgres v13.4 with Babelfish
+# Postgres with Babelfish
 
 This project builds docker images of Postgres with the [Babelfish](https://babelfishpg.org/) extensions.
 
