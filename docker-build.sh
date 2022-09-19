@@ -7,8 +7,8 @@ set -x
 set -eou pipefail
 
 # Versions of Babelfish and extensions to pull from github
-BABEL_PG='BABEL_1_2_0__PG_13_6'
-BABEL_EXT='BABEL_1_2_0'
+BABEL_PG='BABEL_2_1_1__PG_14_3'
+BABEL_EXT='BABEL_1_2_2'
 
 # Assume build dependencies are already installed (from Dockerfile)
 
