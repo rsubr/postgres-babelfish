@@ -16,7 +16,7 @@ Primary difference between official Posgresql docker image and this version is t
 docker pull rsubr/postgres-babelfish
 
 # Location to store PGDATA, run once for initdb to succeed,
-# after PG#start up press Ctrl+C and exit
+# after PG start up press Ctrl+C and exit
 mkdir data
 docker run --rm -e POSTGRES_PASSWORD=password \
     -v ${PWD}/data:/var/lib/postgresql/data rsubr/postgres-babelfish
